@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Pass Screen</title>
+    </head>
+ 
+<body>
+
+<h2>Pass Phrase By Isaac</h2>
+
+<form action="">
+    <input id="pw" type="password" label="Enter the secret place" value="Let me in">
+    <input id="txt" type="text" label="Enter a phrase">
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+
+    <div id="result">
+
+    </div>
+</form>
+
+<script>
+    var correct = 0
+    var wrong = 0
+
+    function processPhrase() {
+        secretPhrase = document.getElementById("pw").value
+        checkPhrase = document.getElementById("txt").value
+        out = document.getElementById("result");
+        if(secretPhrase == checkPhrase) {
+            correct += 1
+            out.innerHTML = "Correct: " + correct + "\nWrong: " + wrong
+            alert("Correct")
+        } else {
+            wrong += 1
+            out.innerHTML = "Correct: " + correct + "\nWrong: " + wrong
+            alert("Wrong")
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
