@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic Page</title>
+    </head>
+ 
+<body>
+
+<h2>Isaac Computes</h2>
+
+<form>
+    <label for="base">Enter a base </label>
+    <input type ="number" id="base" value=10> <br>
+
+    <label for="exponent">Enter an exponent </label>
+    <input type ="number" id="exponent" value=2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<p id="compileResult">This text will be replaced </p>
+
+<script> 
+
+function powers(){
+    console.log("Getting form values")
+    base = document.getElementById("base").value
+    exponent = document.getElementById("exponent").value
+    result = ""
+    for(i=1; i <= exponent; i++) {
+        pwer = Math.pow(base, i);
+        result += pwer + " "
+    }
+
+    out = document.getElementById("compileResult")
+    out.innerHTML = "Powers of "+ base + " are : " + result
+}
+</script>
+
+</body>
+</html>
