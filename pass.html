@@ -18,6 +18,10 @@
     </div>
 </form>
 
+<div class="container">
+    <img src="Anthelope.jpg" alt="Image of an Anthelope" width="200" height="200" onclick="newImage()" id="Imagelog">
+</div>
+
 <script>
     var correct = 0
     var wrong = 0
@@ -37,6 +41,27 @@
         }
 
     }
+    usingImage = 1
+
+     function newImage() {
+                fImg = document.getElementById("Imagelog")
+                switch(usingImage) {
+                    case 1:
+                        fImg.src = "Anthelope.jpg";
+                        usingImage += 1;
+                        break;
+                    case 2:
+                        fImg.src = "dog.jpg";
+                        usingImage += 1;
+                        break;
+                    case 3:
+                        fImg.src = "panther.jpg";
+                        usingImage = 1
+                        break;
+
+                }
+            } 
+
 
 </script>
 
