@@ -39,9 +39,19 @@
             out.innerHTML = "Correct: " + correct + "\nWrong: " + wrong
             alert("Wrong")
         }
+        if(wrong >=3){
+            alertLocked()
+        }
+
 
     }
-    usingImage = 1
+    
+    function alertLocked(){
+        alert("Account has been LOCKED")
+        btn=document.getElementById("passBTN")
+        btn.disabled = true
+    }
+
 
      function newImage() {
                 fImg = document.getElementById("Imagelog")
