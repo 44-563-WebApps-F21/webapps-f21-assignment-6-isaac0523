@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <title> Input collection for a car</title>
+</head>
+<body>
+
+<h2>Isaac Orders a car</h2>
+
+<form>
+    <label for="electric">electric </label>
+    <input type ="checkbox" id="electric" name="electric" > <br>
+
+    <label for="ac">AC</label>
+    <input type ="checkbox" id="ac" name="ac" > <br>
+
+    <label for="gps">GPS </label>
+    <input type ="checkbox" id="gps" name="gps" > <br>
+
+    <input type="button" onclick="ordercar()" value="Order a car">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+my_car = {}
+
+function ordercar(){
+    console.log("Getting form values")
+    electric = document.getElementById("electric").value
+    ac = document.getElementById("ac").value
+    gps = document.getElementById("gps").value
+    my_car = {"electric":electric, "ac":ac, "gps":gps}
+    out = document.getElementById("result")
+    out.innerHTML = "Electric:" + my_car.electric + " AC:" + my_car.ac + " GPS:" +  my_car.gps;
+}
+
+</script>
+
+</body>
+</html> 
