@@ -23,19 +23,36 @@
 
 <p id="result">This text will be replaced </p>
 
+<form>
+    <label for="property">Enter a property </label>
+    <input type ="text" id="property" name="property"  value=color> <br>
+
+    <label for="form1_nick">Enter a value </label>
+    <input type ="text" id="value" name="value" autofocus> <br>
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
+
 <script> 
 my_car = {}
 
 function ordercar(){
     console.log("Getting form values")
     electric = document.getElementById("electric").value
-    ac = document.getElementById("ac").value
-    gps = document.getElementById("gps").value
+  
     my_car = {"electric":electric, "ac":ac, "gps":gps}
     out = document.getElementById("result")
-    out.innerHTML = "Electric:" + my_car.electric + " AC:" + my_car.ac + " GPS:" +  my_car.gps;
+    out.innerHTML = JSON.stringify(my_car)
 }
 
+function updateCar(){
+    property = document.getElementById("property").value
+    value = document.getElementById("value").value
+    my_car[property] = value
+
+    out = document.getElementById("result")
+    out.innerHTML = JSON.stringify(my_car)
+}
 </script>
 
 </body>
